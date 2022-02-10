@@ -12,6 +12,19 @@ telescope.setup {
     selection_caret = " ",
     path_display = { "smart" },
 
+    vimgrep_arguments = {
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case',
+      '--follow',
+      '--hidden'
+    },
+    file_ignore_patterns = {".git/.*", "build_.*"},
+
     mappings = {
       i = {
         ["<C-n>"] = actions.cycle_history_next,

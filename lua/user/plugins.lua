@@ -55,13 +55,32 @@ return packer.startup(function(use)
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
-  use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
+  use "folke/trouble.nvim"
+  -- use "glepnir/lspsaga.nvim"
+
+  -- markdown
+  use {
+      "iamcco/markdown-preview.nvim",
+      run = ":call mkdp#util#install()",
+      cmd = "MarkdownPreview"
+  }
+
+  -- vimwiki and taskwiki
+  use "vimwiki/vimwiki"
+  use "tools-life/taskwiki"
+
+  -- vimscript plugins
+  use "psf/black"
+  use "tpope/vim-surround"
+  use "tpope/vim-fugitive"
+  use "junegunn/gv.vim"
+  use "vim-utils/vim-man"
+  use "mbbill/undotree"
 
   -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "lunarvim/darkplus.nvim"
+  use "gruvbox-community/gruvbox"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -78,7 +97,7 @@ return packer.startup(function(use)
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
+  -- use "tamago323/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- Telescope
